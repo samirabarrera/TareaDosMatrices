@@ -16,17 +16,19 @@ const colsB = matrizB[0].length;
     if(colsA !== rowsB)
       throw new Error("La cantidad de columnas de la primera matriz debe ser la misma que la cantidad de filas de la segunda matriz");
 
-    console.log(multiplyMatrix(matrizA,matrizB));
+    const resultado = []
 
-    for(let i=0; i < n; i++){
+    for(let i=0; i < rowsA; i++){
     const subResultado = []
-        for(let j=0; i < n; j++){
+        for(let j=0; j < colsB; j++){
         let sumTmp = 0;
-            for(let k=0; i < n; k++){ 
-            sumTmp += A[i][k]*B[k][j]
-            resultado.push(subResultado);
+            for(let k=0; k < colsA; k++){ 
+            sumTmp += matrizA[i][k]*matrizB[k][j]
          }
         subResultado.push(sumTmp)
         }
+      resultado.push(subResultado)
     } return resultado;
 }
+
+console.log(multiplyMatrix(matrizA,matrizB));
